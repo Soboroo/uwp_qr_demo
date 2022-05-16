@@ -13,7 +13,7 @@
             <RowDefinition Height="48"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Grid x:Name="AppTitleBar" Background="Transparent">
+        <Grid x:Name="AppTitleBar" Background="Transparent" Margin="16,0,-16,0">
             <!-- Width of the padding columns is set in LayoutMetricsChanged handler. -->
             <!-- Using padding columns instead of Margin ensures that the background
          paints the area under the caption control buttons (for transparent buttons). -->
@@ -32,16 +32,16 @@
                Style="{StaticResource CaptionTextBlockStyle}" 
                Grid.Column="1"
                VerticalAlignment="Center"
-               Margin="28,0,0,0"/>
+               Margin="36,0,-24,0" Grid.ColumnSpan="2"/>
         </Grid>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1">
             <Grid Height="500" Width="500">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="auto"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <TextBlock Text="Scan QR code" Grid.Row="0" FontSize="24" />
-                <TextBlock x:Name="QrResultTextBlock" Text="Scan QR code" Grid.Row="1" />
+                <FontIcon x:Name="QrCodeIcon" FontFamily="Segoe Fluent Icons" Glyph="&#xed14;" FontSize="400" Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Center"/>
+                <Button x:Name="ScanButton" Content="Scan QR Code" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ScanButton_Click" />
             </Grid>
         </StackPanel>
     </Grid>

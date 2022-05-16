@@ -131,6 +131,7 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\QRDecodeHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -139,7 +140,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\WindowIcon.png" />
-    <Content Include="OpenCvSharpExtern.dll" />
+    <Content Include="OpenCvSharpExtern.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -167,9 +170,6 @@
       <Version>2.7.1</Version>
     </PackageReference>
     <PackageReference Include="OpenCvSharp4">
-      <Version>4.5.3.20211228</Version>
-    </PackageReference>
-    <PackageReference Include="OpenCvSharp4.Extensions">
       <Version>4.5.3.20211228</Version>
     </PackageReference>
     <PackageReference Include="Win2D.uwp">
